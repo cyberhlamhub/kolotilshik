@@ -1,0 +1,13 @@
+---
+import Input from '@/components/ui/input/Input.astro';
+
+import styles from './styles.module.scss';
+---
+
+<div class={styles.form}>
+  <Input id='inputLocation' min='0' max='100' value='0' />
+  <Input id='inputHeight' min='0' max='250' value='200' />
+  <Input id='inputWidth' min='0' max='350' value='150' />
+</div>
+
+<script src='./script.ts'></script>

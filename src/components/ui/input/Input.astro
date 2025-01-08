@@ -1,0 +1,24 @@
+---
+import classnames from 'classnames';
+
+import styles from './styles.module.scss';
+
+const {
+  type = 'range',
+  min,
+  max,
+  value,
+  className,
+  id,
+} = Astro.props;
+---
+
+<input
+  type={type}
+  class={classnames(styles.input, className)}
+  id={id}
+  name={id}
+  min={min}
+  max={max}
+  value={value}
+/>

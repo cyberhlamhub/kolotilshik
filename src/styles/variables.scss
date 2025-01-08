@@ -1,0 +1,22 @@
+:root{
+  --red: 245;
+  --green: 222;
+  --blue: 179;
+  --opacity: 1;
+  --shadowRatio: 2;
+
+  --depth: 50px;
+  --width-construction: 150px;
+
+  --width-crossbar: calc(var(--width-construction) + var(--width-leg));
+  --height-crossbar: 50px;
+
+  --width-leg: 50px;
+  --height-leg: 200px;
+}
+
+  // media queries
+  $laptop-query: 1440px;
+  $tablet-query: 1024px;
+  $mobile-query: 744px;
+

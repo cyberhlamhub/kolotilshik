@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+    .view_wrapper{
+    position: relative;
+      perspective: 800px;
+      width: 100%;
+      height: 100vh;   
+  }
+  
+  .view{
+    // position: absolute;
+      width: 100%;
+      height: 100%;
+      // pointer-events: none;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .peshka{
+    position: absolute;
+    width: var(--width-construction);
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: rotateX(-0.5rad) rotateY(0.5rad);
+  }
+  
+  .balk_left{
+    top: 0%;
+    left: 0%;
+  }
+  
+  .balk_right{
+    top: 0%;
+    left: 100%;
+  }
+  
+  .balk_crossbar{
+    top: calc((var(--height-leg) / 2) * -1);
+    left: calc(var(--width-construction) / 2);
+  }
+
+  @media (max-width: $tablet-query) {
+    .view_wrapper{
+        height: 600px;   
+    }
+  }

@@ -1,0 +1,59 @@
+@mixin balk($width, $height) {
+    position: absolute;
+    transform-style: preserve-3d;
+  
+    .edge {
+      position: absolute;
+      background-image: url("http://www.transparenttextures.com/patterns/purty-wood.png");
+  
+      &.front {
+        width: $width;
+        height: $height;
+        transform: translate(-50%, -50%) rotateY(0deg) translateZ(calc(var(--depth) / 2));
+        background-color: rgba(calc(var(--red) - 5 * var(--shadowRatio)), calc(var(--green) - 5 * var(--shadowRatio)), calc(var(--blue) - 5 * var(--shadowRatio)), var(--opacity));
+      }
+  
+      &.left {
+        width: var(--depth);
+        height: $height;
+        transform: translate(-50%, -50%) rotateY(90deg) translateZ(calc($width / 2));
+        background-color: rgba(calc(var(--red) - 10 * var(--shadowRatio)), calc(var(--green) - 10 * var(--shadowRatio)), calc(var(--blue) - 10 * var(--shadowRatio)), var(--opacity));
+      }
+  
+      &.top {
+        width: $width;
+        height: var(--depth);
+        transform: translate(-50%, -50%) rotateX(90deg) translateZ(calc($height / 2));
+        background-color: rgba(var(--red), var(--green), var(--blue), var(--opacity));
+      }
+  
+      &.bottom {
+        width: $width;
+        height: var(--depth);
+        transform: translate(-50%, -50%) rotateX(-90deg) translateZ(calc($height / 2));
+        background-color: rgba(calc(var(--red) - 25 * var(--shadowRatio)), calc(var(--green) - 25 * var(--shadowRatio)), calc(var(--blue) - 25 * var(--shadowRatio)), var(--opacity));
+      }
+  
+      &.right {
+        width: var(--depth);
+        height: $height;
+        transform: translate(-50%, -50%) rotateY(-90deg) translateZ(calc($width / 2));
+        background-color: rgba(calc(var(--red) - 10 * var(--shadowRatio)), calc(var(--green) - 10 * var(--shadowRatio)), calc(var(--blue) - 10 * var(--shadowRatio)), var(--opacity));
+      }
+  
+      &.back {
+        width: $width;
+        height: $height;
+        transform: translate(-50%, -50%) rotateY(180deg) translateZ(calc(var(--depth) / 2));
+        background-color: rgba(calc(var(--red) - 20 * var(--shadowRatio)), calc(var(--green) - 20 * var(--shadowRatio)), calc(var(--blue) - 20 * var(--shadowRatio)), var(--opacity));
+      }
+    }
+}
+
+.balk_leg {
+  @include balk(var(--width-leg), var(--height-leg))
+}
+
+.balk_crossbar {
+  @include balk(var(--width-crossbar), var(--height-crossbar))
+}

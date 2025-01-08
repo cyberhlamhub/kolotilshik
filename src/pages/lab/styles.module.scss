@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.container{
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+@media (max-width: $tablet-query) {
+  .container{
+    grid-template-columns: 1fr;
+}
+}
