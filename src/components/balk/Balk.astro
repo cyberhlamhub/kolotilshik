@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 const { type, className, id } = Astro.props;
 ---
 
-<div class={classnames(type === 'leg' ? styles.balk_leg : styles.balk_crossbar, className)} id={id}>
+<div class={classnames(type === 'leg' && styles.balk_leg, type === 'crossbar' && styles.balk_crossbar, type === 'seat' && styles.balk_seat, type === 'fastening' && styles.balk_fastening, className)} id={id}>
   <div class={classnames(styles.edge, styles.front)}></div>
   <div class={classnames(styles.edge, styles.left)}></div>
   <div class={classnames(styles.edge, styles.top)}></div>

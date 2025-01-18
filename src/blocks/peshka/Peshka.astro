@@ -1,17 +1,17 @@
 ---
+import classnames from 'classnames';
+
 import Balk from '@/components/balk/Balk.astro';
 
 import styles from './styles.module.scss';
+
+const { className, id } = Astro.props;
 ---
 
-<div class={styles.view_wrapper}>
-  <div class={styles.view}>
-    <div class={styles.peshka} id='peshka'>
+    <div class={classnames(styles.peshka, className)} id={id}>
       <Balk type='leg' className={styles.balk_left} id='balkLeft' />
       <Balk type='leg' className={styles.balk_right} id='balkRight' />
       <Balk type='crossbar' className={styles.balk_crossbar} id='balkCrossbar' />
     </div>
-  </div>
-</div>
 
-<script src='./script.ts'></script>
+<!-- <script src='./script.ts'></script>-->

@@ -1,0 +1,67 @@
+@import '../../styles/variables.scss';
+
+    .view_wrapper{
+    position: relative;
+      perspective: 800px;
+      width: 100%;
+      height: 100vh;   
+  }
+  
+  .view{
+    // position: absolute;
+      width: 100%;
+      height: 100%;
+      // pointer-events: none;
+      touch-action: none;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.zabeika{
+  position: absolute;
+  width: var(--width-zabeika);
+  height: var(--height-zabeika);
+  transform-style: preserve-3d;
+  transform: rotateX(-0.5rad) rotateY(0.5rad);
+}
+
+.peshka_left{
+top: 0px;
+left: 0px;
+}
+
+.peshka_right{
+  top: 0px;
+  left: 0px;
+  transform: translateZ(var(--width-zabeika));
+}
+
+.balk_seat{
+  top: calc((var(--height-leg) / 2) * -1);
+  // left: 0px;
+  // transform: rotateX(0rad) rotateY(-1.57rad) translateX(var(--x-seat));
+}
+
+.balk_seatLeft{
+  left: 0px;
+  transform: rotateX(0rad) rotateY(-1.57rad) translateX(var(--x-seat));
+}
+
+.balk_seatCenter{
+  left: calc(var(--width-construction) /2);
+  transform: rotateX(0rad) rotateY(1.57rad) translateX(calc(var(--x-seat) * -1));
+}
+
+.balk_seatRight{
+  left: var(--width-construction);
+  transform: rotateX(0rad) rotateY(1.57rad) translateX(calc(var(--x-seat) * -1));
+}
+
+.balk_fasteningTop{
+  top: calc(((var(--height-leg) / 2) * -1) + var(--depth) + (var(--depth) / 2));
+}
+
+.balk_fasteningCenter{
+  top: calc(((var(--height-leg) / 2) * -1) + var(--depth) * 3);
+}

@@ -1,59 +1,68 @@
-@mixin balk($width, $height) {
+@mixin balk($width, $height, $colorFront, $colorLeft, $colorTop, $colorBottom, $colorRight, $colorBack, $texture, $texturePosition) {
     position: absolute;
     transform-style: preserve-3d;
   
     .edge {
       position: absolute;
-      background-image: url("/purty-wood.png");
+      background-image: url($texture);
+      background-position: $texturePosition;
   
       &.front {
         width: $width;
         height: $height;
         transform: translate(-50%, -50%) rotateY(0deg) translateZ(calc(var(--depth) / 2));
-        background-color: rgba(calc(var(--red) - 5 * var(--shadowRatio)), calc(var(--green) - 5 * var(--shadowRatio)), calc(var(--blue) - 5 * var(--shadowRatio)), var(--opacity));
+        background-color: $colorFront;
       }
   
       &.left {
         width: var(--depth);
         height: $height;
         transform: translate(-50%, -50%) rotateY(90deg) translateZ(calc($width / 2));
-        background-color: rgba(calc(var(--red) - 10 * var(--shadowRatio)), calc(var(--green) - 10 * var(--shadowRatio)), calc(var(--blue) - 10 * var(--shadowRatio)), var(--opacity));
+        background-color: $colorLeft;
       }
   
       &.top {
         width: $width;
         height: var(--depth);
         transform: translate(-50%, -50%) rotateX(90deg) translateZ(calc($height / 2));
-        background-color: rgba(var(--red), var(--green), var(--blue), var(--opacity));
+        background-color: $colorTop;
       }
   
       &.bottom {
         width: $width;
         height: var(--depth);
         transform: translate(-50%, -50%) rotateX(-90deg) translateZ(calc($height / 2));
-        background-color: rgba(calc(var(--red) - 25 * var(--shadowRatio)), calc(var(--green) - 25 * var(--shadowRatio)), calc(var(--blue) - 25 * var(--shadowRatio)), var(--opacity));
+        background-color: $colorBottom;
       }
   
       &.right {
         width: var(--depth);
         height: $height;
         transform: translate(-50%, -50%) rotateY(-90deg) translateZ(calc($width / 2));
-        background-color: rgba(calc(var(--red) - 10 * var(--shadowRatio)), calc(var(--green) - 10 * var(--shadowRatio)), calc(var(--blue) - 10 * var(--shadowRatio)), var(--opacity));
+        background-color: $colorRight;
       }
   
       &.back {
         width: $width;
         height: $height;
         transform: translate(-50%, -50%) rotateY(180deg) translateZ(calc(var(--depth) / 2));
-        background-color: rgba(calc(var(--red) - 20 * var(--shadowRatio)), calc(var(--green) - 20 * var(--shadowRatio)), calc(var(--blue) - 20 * var(--shadowRatio)), var(--opacity));
+        background-color: $colorBack;
       }
     }
 }
 
 .balk_leg {
-  @include balk(var(--width-leg), var(--height-leg))
+  @include balk(var(--width-leg), var(--height-leg), var(--color-front), var(--color-side), var(--color-top), var(--color-bottom), var(--color-side), var(--color-back), "/public/purty-wood.png", auto)
 }
 
 .balk_crossbar {
-  @include balk(var(--width-crossbar), var(--height-crossbar))
+  @include balk(var(--width-crossbar), var(--height-crossbar), var(--color-front), var(--color-side), var(--color-top), var(--color-bottom), var(--color-side), var(--color-back), "/public/purty-wood.png", auto)
+}
+
+.balk_seat{
+  @include balk(var(--width-seat), var(--height-seat), var(--color-side), var(--color-front), var(--color-top), var(--color-bottom), var(--color-side), var(--color-side), "/public/purty-wood-horizontal.png", center)
+}
+
+.balk_fastening{
+  @include balk(var(--width-seat), var(--height-seat), var(--color-side), var(--color-front), var(--color-back), var(--color-side), var(--color-side), var(--color-side), "/public/purty-wood-horizontal.png", 100%)
 }

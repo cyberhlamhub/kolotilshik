@@ -1,0 +1,27 @@
+---
+import classnames from 'classnames';
+
+import Peshka from '@/blocks/peshka/Peshka.astro';
+import Balk from '@/components/balk/Balk.astro';
+
+import styles from './styles.module.scss';
+---
+
+<div class={styles.view_wrapper}>
+  <div class={styles.view}>
+    <div class={styles.zabeika} id='zabeika'>
+      
+      <Balk type='fastening' className={classnames(styles.balk_seatLeft, styles.balk_fasteningTop)} id='fasteningLeftTop' />
+      <Balk type='fastening' className={classnames(styles.balk_seatLeft, styles.balk_fasteningCenter)} id='fasteningLeftCenter' />
+      <Balk type='seat' className={classnames(styles.balk_seat, styles.balk_seatLeft)} id='seatLeft' />
+      <Balk type='seat' className={classnames(styles.balk_seat, styles.balk_seatCenter)} id='seatCenter' />
+      <Balk type='seat' className={classnames(styles.balk_seat, styles.balk_seatRight)} id='seatRight' />
+      <Balk type='fastening' className={classnames(styles.balk_seatRight, styles.balk_fasteningTop)} id='fasteningRightTop' />
+      <Balk type='fastening' className={classnames(styles.balk_seatRight, styles.balk_fasteningCenter)} id='fasteningRightCenter' />
+      <Peshka className={styles.peshka_left} id='peshkaLeft'/>
+      <Peshka className={styles.peshka_right} id='peshkaRight'/>
+    </div>
+  </div>
+</div>
+
+<script src='./script.ts'></script>

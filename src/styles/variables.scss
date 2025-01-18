@@ -1,18 +1,31 @@
 :root{
   --red: 245;
-  --green: 222;
-  --blue: 179;
+  --green: 237;
+  --blue: 220;
   --opacity: 1;
   --shadowRatio: 2;
 
+  --color-front: rgba(calc(var(--red) - 5 * var(--shadowRatio)), calc(var(--green) - 5 * var(--shadowRatio)), calc(var(--blue) - 5 * var(--shadowRatio)), var(--opacity));
+  --color-side: rgba(calc(var(--red) - 10 * var(--shadowRatio)), calc(var(--green) - 10 * var(--shadowRatio)), calc(var(--blue) - 10 * var(--shadowRatio)), var(--opacity));
+  --color-top: rgba(var(--red), var(--green), var(--blue), var(--opacity));
+  --color-back: rgba(calc(var(--red) - 20 * var(--shadowRatio)), calc(var(--green) - 20 * var(--shadowRatio)), calc(var(--blue) - 20 * var(--shadowRatio)), var(--opacity));
+  --color-bottom: rgba(calc(var(--red) - 25 * var(--shadowRatio)), calc(var(--green) - 25 * var(--shadowRatio)), calc(var(--blue) - 25 * var(--shadowRatio)), var(--opacity));
+
   --depth: 50px;
   --width-construction: 150px;
+
+  --width-zabeika: 300px;
+  --height-zabeika: 200px;
 
   --width-crossbar: calc(var(--width-construction) + var(--width-leg));
   --height-crossbar: 50px;
 
   --width-leg: 50px;
   --height-leg: 200px;
+
+  --width-seat: 300px;
+  --height-seat: 50px;
+  --x-seat: calc((var(--width-zabeika) / 2));
 }
 
   // media queries
@@ -20,3 +33,25 @@
   $tablet-query: 1024px;
   $mobile-query: 744px;
 
+
+  $randomNumber: random(100);
+
+ @media (max-width: $laptop-query) {
+    :root{
+      --depth: 35px;
+      --width-construction: 120px;
+
+      --width-zabeika: 240px;
+      --height-zabeika: 122px;
+    
+      --width-crossbar: calc(var(--width-construction) + var(--width-leg));
+      --height-crossbar: 35px;
+    
+      --width-leg: 35px;
+      --height-leg: 122px;
+    
+      --width-seat: 240px;
+      --height-seat: 35px;
+      --x-seat: calc((var(--width-zabeika) / 2));
+    }
+  }
